@@ -1,0 +1,17 @@
+<%= form_with(model: cat_picture, local: true) do |form| %>
+  <% if cat_picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cat_picture.errors.count, "error") %> prohibited this cat_picture from being saved:</h2>
+
+      <ul>
+      <% cat_picture.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
