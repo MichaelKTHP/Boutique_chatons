@@ -22,8 +22,8 @@ p "########################"
 
 10.times do |x|
 	User.create!(
-		email: "#{x}+yopmail.com",
-		encrypted_password: "azerty")
+		email: "#{x}@yopmail.com",
+		password: "azerty")
 end
 
 p "The database has now #{User.count} users"
