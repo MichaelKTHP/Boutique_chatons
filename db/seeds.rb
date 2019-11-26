@@ -45,11 +45,19 @@ end
 p "The database has now #{Cart.count} carts"
 
 3.times do |x|
-	Order.create(
+	Order.create!(
 		cart_id: rand(0..3))
 end
 
 p "The database has now #{Order.count} orders"
+
+10.times do
+	CartItem.create!(
+		item_id: rand(0..10),
+		cart_item: rand(0..10))
+end
+
+p "The database has now #{CartItem.count} Card Item relations"
 
 p "########################"
 p ""
