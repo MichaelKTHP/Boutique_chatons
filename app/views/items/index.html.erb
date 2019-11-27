@@ -4,43 +4,37 @@
 
 <h1>Items</h1>
 
+
+
+
 <table>
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image url</th>
-            <th colspan="3"></th>
-        </tr>
+        
     </thead>
 
     <tbody>
-        <% @items.each do |item| %>
-            <tr>
-                <td>
-                    <%= item.title %>
-                </td>
-                <td>
-                    <%= item.description %>
-                </td>
-                <td>
+    <table>
+
+    <% @items.each do |item| %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4">
+            <div class="col-6"> 
+              <div class="card m-4" style="width: 18rem;">
+                  <div class="card-body">
+                    <img class="card-img-top" src="<%= item.image_url %>" alt="Card image cap">
+                    <h5 class="card-title"><%= item.title %></h5>
+                    <p class="card-text"><%= item.description %></p>
+                    <span class="btn btn-secondary"><%= link_to 'More information', item_path(item.id) %></span>
                     <%= item.price %>
-                </td>
-                <td>
-                    <%= item.image_url %>
-                </td>
-                <td>
-                    <%= link_to 'Show', item %>
-                </td>
-                <td>
-                    <%= link_to 'Edit', edit_item_path(item) %>
-                </td>
-                <td>
-                    <%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %>
-                </td>
-            </tr>
-            <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+  <% end %>
     </tbody>
 </table>
 
